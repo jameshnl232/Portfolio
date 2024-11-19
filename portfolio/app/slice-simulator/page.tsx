@@ -1,4 +1,4 @@
-import {
+/* import {
   SliceSimulator,
   SliceSimulatorParams,
   getSlices,
@@ -19,3 +19,4 @@ export default async function SliceSimulatorPage({
     </SliceSimulator>
   );
 }
+ */

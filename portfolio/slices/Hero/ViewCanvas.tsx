@@ -26,7 +26,7 @@ export default function ViewCanvas({}: Props) {
           left: "50%",
           transform: "translateX(-50%)",
           overflow: "hidden",
-          zIndex: -1,
+          zIndex: 1,
           pointerEvents: "auto",
         }}
         camera={{

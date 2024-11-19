@@ -56,6 +56,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             duration: 1,
             transformOrigin: "left top",
             stagger: { each: 0.1, from: "random" },
+            delay: 1.5,
           },
         )
         .fromTo(
@@ -90,17 +91,17 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
         ref={container}
-        className=""
+        className="hero min-w-screen flex min-h-screen items-center justify-center"
       >
         <div className="grid min-h-screen w-full grid-cols-1 items-center justify-center md:grid-cols-4">
           <div className="col-span-2 md:row-start-1">
             <h1
-              className="w-full flex-col items-center pb-20 text-center text-[3rem] font-extrabold leading-none tracking-tighter md:text-4xl lg:text-[clamp(2rem,12vmin,5rem)]"
+              className="w-full flex-col items-center text-center text-[3rem] font-extrabold leading-none tracking-tighter md:pb-[10rem] md:text-6xl lg:text-[clamp(2rem,12vmin,5rem)]"
               aria-label={
                 slice.primary.firstname + " " + slice.primary.lastname
               }
             >
-              <div className="flex h-full items-center justify-center gap-5 sm:mb-20">
+              <div className="flex h-full items-center justify-center gap-5 pb-5">
                 <span className="block text-yellow-400">
                   {renderLetters(slice.primary.firstname, "first")}
                 </span>

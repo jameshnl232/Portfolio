@@ -8,22 +8,41 @@
 				"value": "ear",
 				"type": "Text"
 			},
-			"introduction": {
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliqua Lorem non esse tempor cillum eu nostrud cupidatat mollit eiusmod reprehenderit."
+						}
+					}
+				]
+			},
+			"buttontext": {
 				"__TYPE__": "FieldContent",
-				"value": "pitch",
+				"value": "porch",
 				"type": "Text"
 			},
-			"image": {
+			"buttonlink": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "older"
+				}
+			},
+			"avatar": {
 				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
-					"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
-					"width": 4272,
-					"height": 2848
+					"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+					"width": 12288,
+					"height": 16384
 				},
-				"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
-				"width": 4272,
-				"height": 2848,
+				"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+				"width": 12288,
+				"height": 16384,
 				"edit": {
 					"zoom": 1,
 					"crop": {

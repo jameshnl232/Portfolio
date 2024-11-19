@@ -19,17 +19,36 @@
             "placeholder": ""
           }
         },
-        "introduction": {
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "buttontext": {
           "type": "Text",
           "config": {
-            "label": "Introduction",
+            "label": "ButtonText",
             "placeholder": ""
           }
         },
-        "image": {
+        "buttonlink": {
+          "type": "Link",
+          "config": {
+            "label": "ButtonLink",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null,
+            "allowText": true
+          }
+        },
+        "avatar": {
           "type": "Image",
           "config": {
-            "label": "Image",
+            "label": "Avatar",
             "constraint": {},
             "thumbnails": []
           }

@@ -186,24 +186,44 @@ export interface AboutSliceDefaultPrimary {
   heading: prismic.KeyTextField;
 
   /**
-   * Introduction field in *About → Default → Primary*
+   * Description field in *About → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * ButtonText field in *About → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: about.default.primary.introduction
+   * - **API ID Path**: about.default.primary.buttontext
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  introduction: prismic.KeyTextField;
+  buttontext: prismic.KeyTextField;
 
   /**
-   * Image field in *About → Default → Primary*
+   * ButtonLink field in *About → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.default.primary.buttonlink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  buttonlink: prismic.LinkField;
+
+  /**
+   * Avatar field in *About → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: about.default.primary.image
+   * - **API ID Path**: about.default.primary.avatar
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image: prismic.ImageField<never>;
+  avatar: prismic.ImageField<never>;
 }
 
 /**

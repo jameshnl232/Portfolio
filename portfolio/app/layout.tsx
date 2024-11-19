@@ -3,8 +3,7 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import Socials from "@/app/components/Social";
 import ViewCanvas from "@/slices/Hero/ViewCanvas";
-import { PrismicPreview } from "@prismicio/next";
-import { repositoryName } from "@/prismicio";
+
 import Header from "./components/Header";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
@@ -27,7 +26,6 @@ export default function RootLayout({
         <Socials />
         <ViewCanvas />
       </body>
-      <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
 }
