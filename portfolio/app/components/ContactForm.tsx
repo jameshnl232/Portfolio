@@ -52,13 +52,13 @@ export default function ContactForm({
   };
 
   return (
-    <div className="container mx-auto w-full relative z-30 mb-10">
+    <div className="container relative z-30 mx-auto mb-10 w-full">
       <div className="flex w-full flex-col items-center justify-center gap-8 md:flex-row">
         <div className="w-full max-w-md md:w-1/2">
           <h2 className="mb-6 text-center text-3xl font-bold md:text-left">
             Get in Touch
           </h2>
-          <form ref={form} onSubmit={onSubmit} className="space-y-4">
+          <form ref={form} onSubmit={onSubmit} className="mx-5 space-y-4">
             <div>
               <Label htmlFor="name">Name</Label>
               <Input
