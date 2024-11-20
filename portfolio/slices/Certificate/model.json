@@ -1,0 +1,64 @@
+{
+  "id": "certificate",
+  "type": "SharedSlice",
+  "name": "Certificate",
+  "description": "Certificate",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "certlist": {
+          "type": "Group",
+          "config": {
+            "label": "CertList",
+            "repeat": true,
+            "fields": {
+              "certname": {
+                "type": "Text",
+                "config": {
+                  "label": "CertName",
+                  "placeholder": ""
+                }
+              },
+              "certdescription": {
+                "type": "Text",
+                "config": {
+                  "label": "CertDescription",
+                  "placeholder": ""
+                }
+              },
+              "certimage": {
+                "type": "Image",
+                "config": {
+                  "label": "CertImage",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "certlink": {
+                "type": "Text",
+                "config": {
+                  "label": "CertLink",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

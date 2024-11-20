@@ -4,7 +4,14 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = AboutSlice | HeroSlice;
+type HomepageDocumentDataSlicesSlice =
+  | ContactSlice
+  | CertificateSlice
+  | EducationSlice
+  | ProjectsSlice
+  | SkillsSlice
+  | AboutSlice
+  | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -169,7 +176,97 @@ export type NavbarDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomepageDocument | NavbarDocument;
+type ProjectpageDocumentDataSlicesSlice = ProjectPageSlice;
+
+/**
+ * Content for projectpage documents
+ */
+interface ProjectpageDocumentData {
+  /**
+   * Title field in *projectpage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projectpage.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * HoverImage field in *projectpage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projectpage.hoverimage
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hoverimage: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *projectpage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projectpage.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ProjectpageDocumentDataSlicesSlice> /**
+   * Meta Title field in *projectpage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: projectpage.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *projectpage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: projectpage.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *projectpage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projectpage.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * projectpage document from Prismic
+ *
+ * - **API ID**: `projectpage`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectpageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ProjectpageDocumentData>,
+    "projectpage",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | HomepageDocument
+  | NavbarDocument
+  | ProjectpageDocument;
 
 /**
  * Primary content in *About → Default → Primary*
@@ -208,12 +305,12 @@ export interface AboutSliceDefaultPrimary {
   /**
    * ButtonLink field in *About → Default → Primary*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: about.default.primary.buttonlink
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  buttonlink: prismic.LinkField;
+  buttonlink: prismic.KeyTextField;
 
   /**
    * Avatar field in *About → Default → Primary*
@@ -252,6 +349,255 @@ type AboutSliceVariation = AboutSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
+
+/**
+ * Item in *Certificate → Default → Primary → CertList*
+ */
+export interface CertificateSliceDefaultPrimaryCertlistItem {
+  /**
+   * CertName field in *Certificate → Default → Primary → CertList*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: certificate.default.primary.certlist[].certname
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  certname: prismic.KeyTextField;
+
+  /**
+   * CertDescription field in *Certificate → Default → Primary → CertList*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: certificate.default.primary.certlist[].certdescription
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  certdescription: prismic.KeyTextField;
+
+  /**
+   * CertImage field in *Certificate → Default → Primary → CertList*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: certificate.default.primary.certlist[].certimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  certimage: prismic.ImageField<never>;
+
+  /**
+   * CertLink field in *Certificate → Default → Primary → CertList*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: certificate.default.primary.certlist[].certlink
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  certlink: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Certificate → Default → Primary*
+ */
+export interface CertificateSliceDefaultPrimary {
+  /**
+   * Heading field in *Certificate → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: certificate.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * CertList field in *Certificate → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: certificate.default.primary.certlist[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  certlist: prismic.GroupField<
+    Simplify<CertificateSliceDefaultPrimaryCertlistItem>
+  >;
+}
+
+/**
+ * Default variation for Certificate Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CertificateSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CertificateSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Certificate*
+ */
+type CertificateSliceVariation = CertificateSliceDefault;
+
+/**
+ * Certificate Shared Slice
+ *
+ * - **API ID**: `certificate`
+ * - **Description**: Certificate
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CertificateSlice = prismic.SharedSlice<
+  "certificate",
+  CertificateSliceVariation
+>;
+
+/**
+ * Primary content in *Contact → Default → Primary*
+ */
+export interface ContactSliceDefaultPrimary {
+  /**
+   * Heading field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Contact Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Contact*
+ */
+type ContactSliceVariation = ContactSliceDefault;
+
+/**
+ * Contact Shared Slice
+ *
+ * - **API ID**: `contact`
+ * - **Description**: Contact
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSlice = prismic.SharedSlice<
+  "contact",
+  ContactSliceVariation
+>;
+
+/**
+ * Item in *Education → Default → Primary → EducationList*
+ */
+export interface EducationSliceDefaultPrimaryEducationlistItem {
+  /**
+   * SchoolName field in *Education → Default → Primary → EducationList*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.educationlist[].schoolname
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  schoolname: prismic.KeyTextField;
+
+  /**
+   * Description field in *Education → Default → Primary → EducationList*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.educationlist[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * From field in *Education → Default → Primary → EducationList*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.educationlist[].from
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  from: prismic.DateField;
+
+  /**
+   * ToWhen field in *Education → Default → Primary → EducationList*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.educationlist[].towhen
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  towhen: prismic.DateField;
+}
+
+/**
+ * Primary content in *Education → Default → Primary*
+ */
+export interface EducationSliceDefaultPrimary {
+  /**
+   * Heading field in *Education → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * EducationList field in *Education → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.educationlist[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  educationlist: prismic.GroupField<
+    Simplify<EducationSliceDefaultPrimaryEducationlistItem>
+  >;
+}
+
+/**
+ * Default variation for Education Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EducationSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<EducationSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Education*
+ */
+type EducationSliceVariation = EducationSliceDefault;
+
+/**
+ * Education Shared Slice
+ *
+ * - **API ID**: `education`
+ * - **Description**: Education
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EducationSlice = prismic.SharedSlice<
+  "education",
+  EducationSliceVariation
+>;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -315,6 +661,262 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *ProjectPage → Default → Primary*
+ */
+export interface ProjectPageSliceDefaultPrimary {
+  /**
+   * Heading field in *ProjectPage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_page.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Description field in *ProjectPage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_page.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * ProjectImage field in *ProjectPage → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_page.default.primary.projectimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  projectimage: prismic.ImageField<never>;
+
+  /**
+   * ProjectLink field in *ProjectPage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_page.default.primary.projectlink
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  projectlink: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ProjectPage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectPageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectPageSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ProjectPage*
+ */
+type ProjectPageSliceVariation = ProjectPageSliceDefault;
+
+/**
+ * ProjectPage Shared Slice
+ *
+ * - **API ID**: `project_page`
+ * - **Description**: ProjectPage
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectPageSlice = prismic.SharedSlice<
+  "project_page",
+  ProjectPageSliceVariation
+>;
+
+/**
+ * Primary content in *Projects → Default → Primary*
+ */
+export interface ProjectsSliceDefaultPrimary {
+  /**
+   * Heading field in *Projects → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Description field in *Projects → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * FallbackImage field in *Projects → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.fallbackimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  fallbackimage: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Projects Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Projects*
+ */
+type ProjectsSliceVariation = ProjectsSliceDefault;
+
+/**
+ * Projects Shared Slice
+ *
+ * - **API ID**: `projects`
+ * - **Description**: Projects
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsSlice = prismic.SharedSlice<
+  "projects",
+  ProjectsSliceVariation
+>;
+
+/**
+ * Item in *Skills → Default → Primary → Skillsset*
+ */
+export interface SkillsSliceDefaultPrimarySkillssetItem {
+  /**
+   * SkillItem field in *Skills → Default → Primary → Skillsset*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.default.primary.skillsset[].skillitem
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  skillitem: prismic.KeyTextField;
+
+  /**
+   * Tech Color field in *Skills → Default → Primary → Skillsset*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.default.primary.skillsset[].tech_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  tech_color: prismic.ColorField;
+}
+
+/**
+ * Item in *Skills → Default → Primary → TechStack*
+ */
+export interface SkillsSliceDefaultPrimaryTechstackItem {
+  /**
+   * TechItem field in *Skills → Default → Primary → TechStack*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.default.primary.techstack[].techitem
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  techitem: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Skills → Default → Primary*
+ */
+export interface SkillsSliceDefaultPrimary {
+  /**
+   * Heading field in *Skills → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Description field in *Skills → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Skillsset field in *Skills → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.default.primary.skillsset[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  skillsset: prismic.GroupField<
+    Simplify<SkillsSliceDefaultPrimarySkillssetItem>
+  >;
+
+  /**
+   * TechStack field in *Skills → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.default.primary.techstack[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  techstack: prismic.GroupField<
+    Simplify<SkillsSliceDefaultPrimaryTechstackItem>
+  >;
+}
+
+/**
+ * Default variation for Skills Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SkillsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SkillsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Skills*
+ */
+type SkillsSliceVariation = SkillsSliceDefault;
+
+/**
+ * Skills Shared Slice
+ *
+ * - **API ID**: `skills`
+ * - **Description**: Skills
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SkillsSlice = prismic.SharedSlice<"skills", SkillsSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -342,15 +944,46 @@ declare module "@prismicio/client" {
       NavbarDocument,
       NavbarDocumentData,
       NavbarDocumentDataNavbaritemsItem,
+      ProjectpageDocument,
+      ProjectpageDocumentData,
+      ProjectpageDocumentDataSlicesSlice,
       AllDocumentTypes,
       AboutSlice,
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
+      CertificateSlice,
+      CertificateSliceDefaultPrimaryCertlistItem,
+      CertificateSliceDefaultPrimary,
+      CertificateSliceVariation,
+      CertificateSliceDefault,
+      ContactSlice,
+      ContactSliceDefaultPrimary,
+      ContactSliceVariation,
+      ContactSliceDefault,
+      EducationSlice,
+      EducationSliceDefaultPrimaryEducationlistItem,
+      EducationSliceDefaultPrimary,
+      EducationSliceVariation,
+      EducationSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      ProjectPageSlice,
+      ProjectPageSliceDefaultPrimary,
+      ProjectPageSliceVariation,
+      ProjectPageSliceDefault,
+      ProjectsSlice,
+      ProjectsSliceDefaultPrimary,
+      ProjectsSliceVariation,
+      ProjectsSliceDefault,
+      SkillsSlice,
+      SkillsSliceDefaultPrimarySkillssetItem,
+      SkillsSliceDefaultPrimaryTechstackItem,
+      SkillsSliceDefaultPrimary,
+      SkillsSliceVariation,
+      SkillsSliceDefault,
     };
   }
 }

@@ -1,0 +1,72 @@
+{
+  "id": "skills",
+  "type": "SharedSlice",
+  "name": "Skills",
+  "description": "Skills",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        },
+        "skillsset": {
+          "type": "Group",
+          "config": {
+            "label": "Skillsset",
+            "repeat": true,
+            "fields": {
+              "skillitem": {
+                "type": "Text",
+                "config": {
+                  "label": "SkillItem",
+                  "placeholder": ""
+                }
+              },
+              "tech_color": {
+                "type": "Color",
+                "config": {
+                  "label": "Tech Color",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "techstack": {
+          "type": "Group",
+          "config": {
+            "label": "TechStack",
+            "repeat": true,
+            "fields": {
+              "techitem": {
+                "type": "Text",
+                "config": {
+                  "label": "TechItem",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

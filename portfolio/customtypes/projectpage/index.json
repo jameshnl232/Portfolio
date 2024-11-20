@@ -1,35 +1,38 @@
 {
   "format": "page",
-  "id": "homepage",
-  "label": "Homepage",
-  "repeatable": false,
+  "id": "projectpage",
+  "label": "projectpage",
+  "repeatable": true,
   "status": true,
   "json": {
     "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "hoverimage": {
+        "type": "Image",
+        "config": {
+          "label": "HoverImage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "contact": {
-              "type": "SharedSlice"
-            },
-            "certificate": {
-              "type": "SharedSlice"
-            },
-            "education": {
-              "type": "SharedSlice"
-            },
-            "projects": {
-              "type": "SharedSlice"
-            },
-            "skills": {
-              "type": "SharedSlice"
-            },
-            "about": {
-              "type": "SharedSlice"
-            },
-            "hero": {
+            "project_page": {
               "type": "SharedSlice"
             }
           }

@@ -1,0 +1,56 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"educationlist": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"schoolname",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "so",
+									"type": "Text"
+								}
+							],
+							[
+								"from",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Date",
+									"value": "2014-11-22"
+								}
+							],
+							[
+								"towhen",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Date",
+									"value": "2019-08-14"
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "father",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "wheat",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

@@ -24,16 +24,7 @@
 				"value": "porch",
 				"type": "Text"
 			},
-			"buttonlink": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "https://slicemachine.dev",
-					"text": "older"
-				}
-			},
 			"avatar": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
@@ -51,7 +42,15 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"buttonlink": {
+				"__TYPE__": "FieldContent",
+				"value": "smallest",
+				"type": "Text"
 			}
 		},
 		"items": []

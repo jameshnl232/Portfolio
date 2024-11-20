@@ -1,0 +1,63 @@
+{
+  "id": "education",
+  "type": "SharedSlice",
+  "name": "Education",
+  "description": "Education",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "educationlist": {
+          "type": "Group",
+          "config": {
+            "label": "EducationList",
+            "repeat": true,
+            "fields": {
+              "schoolname": {
+                "type": "Text",
+                "config": {
+                  "label": "SchoolName",
+                  "placeholder": ""
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              },
+              "from": {
+                "type": "Date",
+                "config": {
+                  "label": "From",
+                  "placeholder": ""
+                }
+              },
+              "towhen": {
+                "type": "Date",
+                "config": {
+                  "label": "ToWhen",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

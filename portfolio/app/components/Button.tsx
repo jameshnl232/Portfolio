@@ -6,7 +6,7 @@ export default function Button({
   text,
   className,
 }: {
-  onClick: () => void;
+  onClick?: () => void;
   text: KeyTextField;
   className?: string;
 }) {

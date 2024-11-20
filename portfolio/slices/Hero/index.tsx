@@ -12,6 +12,7 @@ import { View } from "@react-three/drei";
 import { Bubbles } from "@/slices/Hero/Bubbles";
 import CrystalSpinner from "@/slices/Hero/CrystalSpinner";
 
+
 gsap.registerPlugin(useGSAP);
 
 /**
@@ -80,6 +81,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 
   return (
     <>
+
       <View
         ref={view}
         className="hero-scene absolute top-0 -mb-[100vh] hidden min-h-screen w-full md:block"

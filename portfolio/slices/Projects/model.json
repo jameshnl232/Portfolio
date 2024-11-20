@@ -1,8 +1,8 @@
 {
-  "id": "about",
+  "id": "projects",
   "type": "SharedSlice",
-  "name": "About",
-  "description": "About",
+  "name": "Projects",
+  "description": "Projects",
   "variations": [
     {
       "id": "default",
@@ -20,32 +20,16 @@
           }
         },
         "description": {
-          "type": "StructuredText",
+          "type": "Text",
           "config": {
             "label": "Description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph"
-          }
-        },
-        "buttontext": {
-          "type": "Text",
-          "config": {
-            "label": "ButtonText",
             "placeholder": ""
           }
         },
-        "buttonlink": {
-          "type": "Text",
-          "config": {
-            "label": "ButtonLink",
-            "placeholder": ""
-          }
-        },
-        "avatar": {
+        "fallbackimage": {
           "type": "Image",
           "config": {
-            "label": "Avatar",
+            "label": "FallbackImage",
             "constraint": {},
             "thumbnails": []
           }

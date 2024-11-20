@@ -1,8 +1,8 @@
 {
-  "id": "about",
+  "id": "project_page",
   "type": "SharedSlice",
-  "name": "About",
-  "description": "About",
+  "name": "ProjectPage",
+  "description": "ProjectPage",
   "variations": [
     {
       "id": "default",
@@ -20,34 +20,25 @@
           }
         },
         "description": {
-          "type": "StructuredText",
+          "type": "Text",
           "config": {
             "label": "Description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph"
-          }
-        },
-        "buttontext": {
-          "type": "Text",
-          "config": {
-            "label": "ButtonText",
             "placeholder": ""
           }
         },
-        "buttonlink": {
-          "type": "Text",
-          "config": {
-            "label": "ButtonLink",
-            "placeholder": ""
-          }
-        },
-        "avatar": {
+        "projectimage": {
           "type": "Image",
           "config": {
-            "label": "Avatar",
+            "label": "ProjectImage",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "projectlink": {
+          "type": "Text",
+          "config": {
+            "label": "ProjectLink",
+            "placeholder": ""
           }
         }
       },
