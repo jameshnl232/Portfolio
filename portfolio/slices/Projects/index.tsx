@@ -23,13 +23,20 @@ const Projects = async ({ slice }: ProjectsProps): Promise<JSX.Element> => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="projects relative z-30 min-h-screen"
+      id="projects"
     >
-      <Heading size="xl" className="mb-10">
+      <Heading size="xl" className="mb-5">
         <div className="heading">{slice.primary.heading}</div>
       </Heading>
 
-      <ProjectList items={projects} fallbackImage={slice.primary.fallbackimage} />
+      <div className="text-muted-foreground mb-10 text-lg md:text-3xl">
+        {slice.primary.description}
+      </div>
 
+      <ProjectList
+        items={projects}
+        fallbackImage={slice.primary.fallbackimage}
+      />
     </Bounded>
   );
 };

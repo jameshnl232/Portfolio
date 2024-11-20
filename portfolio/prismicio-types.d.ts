@@ -540,6 +540,26 @@ export interface EducationSliceDefaultPrimaryEducationlistItem {
    * - **Documentation**: https://prismic.io/docs/field#date
    */
   towhen: prismic.DateField;
+
+  /**
+   * Grade field in *Education → Default → Primary → EducationList*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.educationlist[].grade
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  grade: prismic.KeyTextField;
+
+  /**
+   * Image field in *Education → Default → Primary → EducationList*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.educationlist[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
 }
 
 /**

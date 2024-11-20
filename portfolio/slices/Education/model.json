@@ -52,6 +52,21 @@
                   "label": "ToWhen",
                   "placeholder": ""
                 }
+              },
+              "grade": {
+                "type": "Text",
+                "config": {
+                  "label": "Grade",
+                  "placeholder": ""
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
               }
             }
           }
