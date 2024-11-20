@@ -52,7 +52,7 @@ export default function ContactForm({
   };
 
   return (
-    <div className="container mx-auto w-full">
+    <div className="container mx-auto w-full relative z-30 mb-10">
       <div className="flex w-full flex-col items-center justify-center gap-8 md:flex-row">
         <div className="w-full max-w-md md:w-1/2">
           <h2 className="mb-6 text-center text-3xl font-bold md:text-left">

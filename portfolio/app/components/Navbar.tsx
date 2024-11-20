@@ -24,7 +24,7 @@ export default function Navbar({ navbarItems }: Props) {
   };
 
   return (
-    <nav className="z-50 mx-4 mt-4 flex items-center justify-between rounded-3xl bg-slate-300/60 px-4 py-3 backdrop-blur-2xl md:px-6">
+    <nav className="z-50 relative mx-4 mt-4 flex items-center justify-between rounded-3xl bg-slate-300/60 px-4 py-3 backdrop-blur-2xl md:px-6">
       <NameLogo name={navbarItems.data.name} />
 
       <div className="hidden items-center space-x-6 md:flex">

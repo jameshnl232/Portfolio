@@ -9,14 +9,18 @@ const urbanist = Urbanist({ subsets: ["latin"] });
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
-  const settings = await client.getSingle("homepage");
+  const page = await client.getSingle("homepage");
 
   return {
-    title: settings.data.meta_title,
-    description: settings.data.meta_description,
-    // openGraph: {
-    //   images: [settings.data.og_image?.url || ""],
-    // },
+    title: page.data.meta_title,
+    description: page.data.meta_description,
+    openGraph: {
+       images: [
+          {
+            url: "./Dumpybird.ico"
+          }
+       ]
+    },
   };
 }
 
@@ -26,14 +30,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className="bg-indigo-900 text-slate-200"
-    >
+    <html lang="en" className="bg-indigo-900 text-white">
       <body className={`${urbanist.className} antialiased`} id="root">
         {children}
         <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
-        
+
         <Socials />
         <ViewCanvas />
       </body>
