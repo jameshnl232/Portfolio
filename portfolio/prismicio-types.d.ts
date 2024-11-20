@@ -465,6 +465,16 @@ export interface ContactSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   heading: prismic.KeyTextField;
+
+  /**
+   * Image field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
 }
 
 /**

@@ -3,14 +3,22 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import Socials from "@/app/components/Social";
 import ViewCanvas from "@/slices/Hero/ViewCanvas";
-
+import { createClient } from "@/prismicio";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Luong Hoang",
-  description: "Luong Hoang's personal website",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const client = createClient();
+  const settings = await client.getSingle("homepage");
+
+  return {
+    title: settings.data.meta_title,
+    description: settings.data.meta_description,
+    // openGraph: {
+    //   images: [settings.data.og_image?.url || ""],
+    // },
+  };
+}
 
 export default function RootLayout({
   children,
@@ -18,9 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-slate-900 text-slate-100">
+    <html
+      lang="en"
+      className="bg-indigo-900 text-slate-200"
+    >
       <body className={`${urbanist.className} antialiased`} id="root">
         {children}
+        <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
+        
         <Socials />
         <ViewCanvas />
       </body>

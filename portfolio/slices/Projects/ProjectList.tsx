@@ -90,7 +90,7 @@ export default function ProjectList({ items, fallbackImage }: Props) {
       <ul
         ref={component}
         onMouseLeave={onMouseLeave}
-        className="grid border-b border-b-slate-100"
+        className="grid "
       >
         {items.map((project, index) => (
           <li

@@ -25,6 +25,8 @@ const Projects = async ({ slice }: ProjectsProps): Promise<JSX.Element> => {
       className="projects relative z-30 min-h-screen"
       id="projects"
     >
+      <div className="pointer-events-none absolute inset-0 -z-40 h-full bg-[url('/noisetexture.jpg')] opacity-20 mix-blend-soft-light"></div>
+
       <Heading size="xl" className="mb-5">
         <div className="heading">{slice.primary.heading}</div>
       </Heading>

@@ -31,7 +31,7 @@ const Education = ({ slice }: EducationProps): JSX.Element => {
               key={index}
               className="bg-slate-800 overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
             >
-              <div className="relative h-48">
+              <div className="relative h-64">
                 <PrismicNextImage
                   field={item.image}
                   fill
