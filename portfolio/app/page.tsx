@@ -26,5 +26,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: page.data.meta_title,
     description: page.data.meta_description,
+    icons: {
+      icon: "./Dumpybird.ico",
+    }
   };
 }

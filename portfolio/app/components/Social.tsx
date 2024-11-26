@@ -12,7 +12,7 @@ const data = [
   {
     id: 2,
     title: "LinkedIn",
-    url: "www.linkedin.com/in/luong-hoang-ba2aa127b",
+    url: "https://www.linkedin.com/in/luong-hoang-ba2aa127b/",
   },
   { id: 3, title: "GitHub", url: "https://github.com/jameshnl232" },
 ];
